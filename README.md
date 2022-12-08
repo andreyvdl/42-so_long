@@ -8,9 +8,9 @@ so_long | Makefile, \*.h, \*.c, maps | NAME, all, clean, fclean, re | open, clos
 
 >You must create a basic 2D game in which a dolphin escapes Earth after eating some fish. Instead of a dolphin, fish, and the Earth, you can use any character, any collectible and any place you want.
 
-## Prototype
+## Execution
 ```sh
-./so_long map1.ber
+./so_long <filename>.ber
 ```
 
 ### [MLX](https://github.com/codam-coding-college/MLX42/)
