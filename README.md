@@ -13,7 +13,8 @@ so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | 
 ./so_long <filename>.ber
 ```
 
-### [MLX](https://github.com/codam-coding-college/MLX42/)
+### [CODAM MLX](https://github.com/codam-coding-college/MLX42/)
+### [42Paris
 
 ### Errno table
 
