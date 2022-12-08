@@ -1,0 +1,25 @@
+/* XPM */
+static char *xpm_[] = {
+"16 16 5 1 ",
+"  c #CEA25A",
+". c #E7D3A5",
+"X c #AD8239",
+"o c #BD924A",
+"O c #D6AA6B",
+" .XXX.   .XXX.  ",
+"..XXX.  ..XXX.  ",
+"oo.XX...oo.XX...",
+"oo.OOO.ooo.OOO.o",
+"oo.OOOOooo.OOOOo",
+"oo.OOOOooo.OOOOo",
+" ..OOO.  ..OOO. ",
+"  XX..    XX..  ",
+" .XXX.   .XXX.  ",
+"..XXX.  ..XXX.  ",
+"oo.XX...oo.XX...",
+"oo.OOO.ooo.OOO.o",
+"oo.OOOOooo.OOOOo",
+"oo.OOOOooo.OOOOo",
+" ..OOO.  ..OOO. ",
+"  XX..    XX..  "
+};
