@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:52:01 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/08 17:19:47 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:19:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	validate_file(char *file, t_map *map)
 	if (i < 5 || ft_strncmp(&file[i - 4], ".ber", 4))
 		print_error("filename", 53);
 	fd = open(file, O_RDONLY);
-	if (fd < 0)
+	if (fd < 0 || read(fd, 0, 0))
 	{
 		close(fd);
 		print_error("openning", 2);
