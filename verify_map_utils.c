@@ -6,18 +6,18 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:22:20 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 16:49:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:28:05 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "includes/libft.h"
 
 int	locate_references(t_map *map, size_t y, size_t x)
 {
-	while (++y <= map->y_mx)
+	while (++y < map->y_mx)
 	{
-		x = -1;
-		while (++x <= map->x_mx)
+		while (++x < map->x_mx)
 		{
 			if (map->map[y][x] == 'P')
 			{
@@ -32,6 +32,7 @@ int	locate_references(t_map *map, size_t y, size_t x)
 				map->exit_count++;
 			}
 		}
+		x = -1;
 	}
 	if (map->mc_count != 1 || map->exit_count != 1)
 		return (1);
@@ -46,16 +47,16 @@ int	backtracking(t_map *map)
 
 	copy = (char **)ft_calloc(map->y_mx + 1, sizeof(char *));
 	y = -1;
-	while (++y <= map->y_mx)
+	while (++y < map->y_mx)
 		copy[y] = ft_strdup(map->map[y]);
 	flowage(copy, map->mc[0], map->mc[1]);
 	y = -1;
-	while (++y <= map->y_mx)
+	while (++y < map->y_mx)
 	{
 		x = -1;
-		while (++x <= map->x_mx)
+		while (++x < map->x_mx)
 		{
-			if (copy[y][x] == 'E' || copy[y][x] == 'P' || copy[y][x] == 'C')
+			if (ft_strchr("EPC", copy[y][x]))
 			{
 				free_copy(map, copy);
 				return (1);
@@ -69,12 +70,12 @@ int	backtracking(t_map *map)
 void	flowage(char **map, size_t y, size_t x)
 {
 	map[y][x] = 'X';
-	if (map[y][x + 1] != '1' && map[y][x + 1] != 'X')
+	if (!ft_strchr("1X", map[y][x + 1]))
 		flowage(map, y, x + 1);
-	if (map[y][x - 1] != '1' && map[y][x - 1] != 'X')
+	if (!ft_strchr("1X", map[y][x - 1]))
 		flowage(map, y, x - 1);
-	if (map[y + 1][x] != '1' && map[y + 1][x] != 'X')
+	if (!ft_strchr("1X", map[y + 1][x]))
 		flowage(map, y + 1, x);
-	if (map[y - 1][x] != '1' && map[y - 1][x] != 'X')
+	if (!ft_strchr("1X", map[y - 1][x]))
 		flowage(map, y - 1, x);
 }

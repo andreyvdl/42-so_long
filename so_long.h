@@ -6,14 +6,14 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 16:57:03 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:53:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "minilibx-linux/mlx.h"
+# include <mlx.h>
 # include <string.h> //strerror
 # include <stdlib.h> //exit
 # include <unistd.h>
@@ -65,9 +65,9 @@ void	validate_file(char *file, t_map *map);
 // verify_map.c functions
 void	file2matrix(t_map *map);
 int		validate_map(t_map *map);
-void	get_map_size(t_map *map);
+int		get_map_size(t_map *map);
+int		map_is_valid(t_map *map);
 int		map_is_closed(t_map *map);
-int		map_can_be_checked(t_map *map);
 
 // verify_map_utils.c functions
 int		backtracking(t_map *map);

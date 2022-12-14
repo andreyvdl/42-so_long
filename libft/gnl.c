@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:23:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:01:28 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/gnl.h"
+#include "../includes/libft.h"
 
 char	*get_next_line(int fd)
 {

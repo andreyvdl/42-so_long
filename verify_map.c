@@ -6,11 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:11:57 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 16:58:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:34:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "includes/libft.h"
+#include "includes/gnl.h"
 
 int	validate_map(t_map *map)
 {
@@ -52,17 +54,18 @@ int	get_map_size(t_map *map)
 		line = get_next_line(map->fd);
 		if (!line)
 			break ;
+		y++;
 		if (map->x_mx == 0)
 			map->x_mx = ft_strlen(line) - 1;
-		else if (map->x_mx != ft_strlen(line) - 1 || map->x_mx <= 2)
+		else if ((map->x_mx != ft_strlen(line) - 1
+				&& line[ft_strlen(line)] == '\n') || map->x_mx <= 2)
 		{
 			free(line);
 			return (1);
 		}
 		free(line);
-		y++;
 	}
-	if (y <= 2)
+	if (y <= 2 || (map->x_mx <= 3 && y <= 3))
 		return (1);
 	map->y_mx = y;
 	return (0);
@@ -76,13 +79,16 @@ void	file2matrix(t_map *map)
 
 	map->map = (char **)ft_calloc(sizeof(char *), map->y_mx + 1);
 	y = -1;
-	while (++y <= map->y_mx)
+	while (++y < map->y_mx)
 	{
 		line = get_next_line(map->fd);
-		x = -1;
+		x = 0;
 		map->map[y] = (char *)ft_calloc(sizeof(char), map->x_mx + 1);
-		while (line[++x] != '\n')
+		while (line[x] != '\n' && line[x])
+		{
 			map->map[y][x] = line[x];
+			x++;
+		}
 		free(line);
 	}
 }
@@ -93,36 +99,34 @@ int	map_is_closed(t_map *map)
 	size_t	x;
 
 	y = -1;
-	while (++y <= map->y_mx)
-		if (map->map[y][0] != '1' || map->map[y][map->x_mx] != '1')
+	while (++y < map->y_mx)
+		if (map->map[y][0] != '1' || map->map[y][map->x_mx - 1] != '1')
 			return (1);
 	x = -1;
-	while (++x <= map->x_mx)
-		if (map->map[0][x] != '1' || map->map[map->y_mx][x] != '1')
+	while (++x < map->x_mx)
+		if (map->map[0][x] != '1' || map->map[map->y_mx - 1][x] != '1')
 			return (1);
 	return (0);
 }
 
-int	map_can_be_checked(t_map *map)
+int	map_is_valid(t_map *map)
 {
 	size_t	y;
 	size_t	x;
 
 	y = -1;
-	while (++y <= map->y_mx)
+	while (++y < map->y_mx)
 	{
 		x = -1;
-		while (++x <= map->x_mx)
+		while (++x < map->x_mx)
 		{
-			if (map->map[y][x] != '1' && map->map[y][x] != '0'
-				&& map->map[y][x] != 'C' && map->map[y][x] != 'E'
-				&& map->map[y][x] != 'P')
+			if (!ft_strchr("01CEP", map->map[y][x]))
 				return (1);
 			else if (map->map[y][x] == 'C')
 				map->coin_count++;
 		}
 	}
-	if (locate_references(map, -1, -1) || map->coin_count == 0)
+	if (map->coin_count == 0 || locate_references(map, -1, -1))
 		return (1);
 	return (0);
 }

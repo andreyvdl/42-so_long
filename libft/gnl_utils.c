@@ -6,45 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:51:38 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:24:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:01:37 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/gnl.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (s)
-	{
-		while (s && s[i] != 0 && s[i] <= 127)
-			i++;
-	}
-	return (i);
-}
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	char	*arr;
-	size_t	i;
-	size_t	memlmt;
-
-	memlmt = nmemb * size;
-	if (memlmt / size != nmemb || memlmt / nmemb != size)
-		return (0x0);
-	arr = malloc(nmemb * size);
-	if (arr == 0x0)
-		return (0x0);
-	i = 0;
-	while (nmemb * size != i)
-	{
-		arr[i] = '\0';
-		i++;
-	}
-	return ((void *)arr);
-}
+#include "../includes/libft.h"
 
 void	*ft_realloc_mod(char **ptr)
 {
@@ -73,18 +40,6 @@ void	*ft_realloc_mod(char **ptr)
 	free(*ptr);
 	*ptr = 0x0;
 	return ((void *)new_ptr);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	int		i;
-
-	i = 0;
-	while ((char)c != s[i] && s[i] != '\0')
-		i++;
-	if ((char)c == s[i])
-		return (&((char *)s)[i]);
-	return (0x0);
 }
 
 char	*ft_strjoin_mod(char *s1, char *s2)

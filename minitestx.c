@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:07 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/08 17:19:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:52:16 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 // }
 
 #include "so_long.h"
+#include "includes/ft_printf.h"
 
 int	main(int ac, char **av)
 {
@@ -33,6 +34,8 @@ int	main(int ac, char **av)
 		close(map.fd);
 		print_error("map", 59);
 	}
+	for (size_t i = 0; i < map.y_mx; i++)
+		ft_printf("%s\n", map.map[i]);
 	ft_printf("\e[44mLoading game...🎮\e[0m\n");
 	// game_start(&ptrs, &map); //256: 5x3 128: 10x6 64: 20x12 32: 40x24 16: 80x48 8: 160x96
 	// mlx_put_image_to_window(ptrs.mlx, ptrs.win, ptrs.img, 400, 300);
