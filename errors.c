@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:56:04 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 12:43:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:35:24 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	print_error(char *local, int n)
 	}
 	else if (n == 59)
 	{
-		ft_printf("Error\n❌Map isn't valid.❌\nRTFM or call dev!\n");
+		ft_printf("Error\n");
+		ft_printf("Map isn't valid.❌\nRTFM or call the dev/tech person!📑\n");
 		exit(59);
 	}
 	ft_printf("%s: %s\n", local, strerror(n));

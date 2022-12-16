@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/14 12:53:45 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:51:06 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include <fcntl.h>
 # include <math.h>
 
-typedef struct s_pointers {
+typedef struct s_ptr {
 	void	*mlx;
 	void	*win;
-}	t_pointers;
+}	t_ptr;
 
 typedef struct s_map {
 	char	*name;
@@ -73,5 +73,8 @@ int		map_is_closed(t_map *map);
 int		backtracking(t_map *map);
 void	flowage(char **map, size_t y, size_t x);
 int		locate_references(t_map *map, size_t y, size_t x);
+
+//mlx_begin.c functions
+
 
 #endif
