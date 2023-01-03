@@ -6,25 +6,26 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/16 16:34:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:15:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <mlx.h>
 #include "so_long.h"
 
 int	mlx_start(t_map *map, t_ptr *ptr, t_img *img)
 {
 	if (load_textures(map, ptr, img))
 		return (1);
-	map->mlx = mlx_init();
-	if (!map->mlx)
+	ptr->mlx = mlx_init();
+	if (!ptr->mlx)
 	{
 		free_textures(map, ptr, img);
 		return (1);
 	}
-	map->win = mlx_new_window(map->mlx, map->x_mx * img->size,
+	ptr->win = mlx_new_window(ptr->mlx, map->x_mx * img->size,
 			map->y_mx * img->size, "EPIC GAME by adantas-");
-	if (!map->win)
+	if (!ptr->win)
 	{
 		free_textures(map, ptr, img);
 		return (1);
