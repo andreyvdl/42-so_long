@@ -16,6 +16,73 @@ so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | 
 ### [CODAM MLX](https://github.com/codam-coding-college/MLX42)
 ### [42Paris](https://github.com/42Paris/minilibx-linux)
 
+### Key table (numerical order)
+
+code used to get that values:
+```c
+#include <mlx.h>
+#include <stdio.h>
+
+int	key_hook(int keycode, int *key)
+{
+	printf("key: %c ", (unsigned char)keycode);
+	*key = keycode;
+	printf("keycode: %d\n", keycode);
+	return (0);
+}
+
+int	main(void)
+{
+	void	*mlx;
+	void	*win;
+	int		key;
+
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 500, 500, "Map Keys");
+	mlx_key_hook(win, key_hook, &key);
+	mlx_loop(mlx);
+	return (0);
+}
+```
+<!-- 32 | space | 39 | ' | 45 | -
+44 | , | 46 | . | 47 | /
+48 | 0 | 49 | 1 | 50 | 2
+51 | 3 | 52 | 4 |53 | 5
+54 | 6 | 55 | 7 | 56 | 8
+57 | 9 | 59 | ; | 61 | =
+91 | [ | 92 | \ | 93 | ]
+97 | a | 98 | b | 99 | c
+100 | d | 101 | e | 102 | f
+103 | g | 104 | h | 105 | i
+106 | j | 107 | k | 108 | l
+109 | m | 110 | n | 111 | o
+112 | p | 113 | q | 114 | r
+115 | s | 116 | t | 117 | u
+118 | v | 119 | w | 120 | x
+121 | y | 122 | z |-->
+number | key | number | key | number | key
+:---: | :---: | :---: | :---: | :---: | :---:
+231 | ç | 65027 | AltGr (right Alt) | 65105 | ´
+65107 | ~ | 65288 | backspace | 65289 | tab 
+65293 | enter | 65299 | pause | 65300 | scrollock 
+65307 | esc | 65360 | HOME | 65361 | ⬅ 
+65362 | ⬆ | 65363 | ➡ | 65364 | ⬇ 
+65365 | page up | 65366 | page down | 65367 | END 
+65379 | insert | 65383 | context menu key | 65407 | num lock 
+65421 | num_enter | 65429 | num_7 | 65430 | num_4 
+65431 | num_8 | 65432 | num_6 | 65433 | num_2
+65434 | num_9 | 65435 | num_3 | 65436 | num_1
+65437 | num_5 | 65438 | num_0 | 65439 | num_,
+65450 | num_* | 65451 | num_+ | 65453 | num_-
+65454 | num_. | 65455 | num_/ | 65470 | F1 
+65471 | F2 | 65472 | F3 | 65473 | F4 
+65474 | F5 | 65475 | F6 | 65476 | F7 
+65477 | F8 | 65478 | F9 | 65479 | F10
+65480 | F11 | 65481 | F12 | 65505 | left shift 
+65506 | right shift | 65507 | left ctrl | 65508 | right ctrl 
+65509 | capslock | 65513 | left alt | 65515 | windows 
+65535 | delete
+
 ### Errno table
 
 Num | Name | Error
