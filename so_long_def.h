@@ -1,13 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_xpm.c                                         :+:      :+:    :+:   */
+/*   so_long_def.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 16:24:49 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/16 16:25:00 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/07 15:34:51 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/07 15:35:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_DEF_H
+# define SO_LONG_DEF_H
+
+# define COIN32 "textures/coin32.xpm"
+# define WALL32 "textures/wall32.xpm"
+# define MCR32 "textures/kirbyR32.xpm"
+# define FLOOR32 "textures/ground32.xpm"
+# define EXITO32 "textures/exitOpen32.xpm"
+# define EXITC32 "textures/exitClose32.xpm"
+
+#endif

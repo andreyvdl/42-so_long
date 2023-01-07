@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:22:20 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/14 13:28:05 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/07 13:26:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	backtracking(t_map *map)
 		x = -1;
 		while (++x < map->x_mx)
 		{
-			if (ft_strchr("EPC", copy[y][x]))
+			if (ft_strchr("EC", copy[y][x]))
 			{
 				free_copy(map, copy);
 				return (1);

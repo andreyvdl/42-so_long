@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:10:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/04 13:32:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/07 15:29:58 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,24 @@ void	free_map(t_map *map)
 
 void	free_textures(t_ptr *ptrs, t_img *img)
 {
-	mlx_destroy_image(ptrs->mlx, img->wall);
-	mlx_destroy_image(ptrs->mlx, img->floor);
-	mlx_destroy_image(ptrs->mlx, img->exit1);
-	mlx_destroy_image(ptrs->mlx, img->exit0);
-	mlx_destroy_image(ptrs->mlx, img->coin);
-	mlx_destroy_image(ptrs->mlx, img->mc_d);
-	mlx_destroy_image(ptrs->mlx, img->mc_l);
-	mlx_destroy_image(ptrs->mlx, img->mc_r);
-	mlx_destroy_image(ptrs->mlx, img->mc_u);
+	if (img->wall)
+		mlx_destroy_image(ptrs->mlx, img->wall);
+	if (img->floor)
+		mlx_destroy_image(ptrs->mlx, img->floor);
+	if (img->exit0)
+		mlx_destroy_image(ptrs->mlx, img->exit0);
+	if (img->exit1)
+		mlx_destroy_image(ptrs->mlx, img->exit1);
+	if (img->coin)
+		mlx_destroy_image(ptrs->mlx, img->coin);
+	if (img->mc_r)
+		mlx_destroy_image(ptrs->mlx, img->mc_r);
+}
+
+void	free_ptrs(t_ptr *ptrs)
+{
+	if (ptrs->mlx)
+		free(ptrs->mlx);
+	if (ptrs->win)
+		free(ptrs->win);
 }
