@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:10:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 13:50:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:38:16 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,4 @@ void	free_textures(t_ptr *ptrs, t_img *img)
 		mlx_destroy_image(ptrs->mlx, img->coin);
 	if (img->mc_r)
 		mlx_destroy_image(ptrs->mlx, img->mc_r);
-}
-
-void	free_ptrs(t_ptr *ptrs)
-{
-	if (ptrs->mlx)
-		free(ptrs->mlx);
 }

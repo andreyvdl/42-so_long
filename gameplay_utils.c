@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 14:34:11 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:39:33 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	move_up(t_master *mstr)
 {
 	if (mstr->map->map[mstr->map->mc[0] - 1][mstr->map->mc[1]] == '1')
-		;
+		return (0);
 	else if (mstr->map->map[mstr->map->mc[0] - 1][mstr->map->mc[1]] == 'C')
 	{
 		mstr->map->map[mstr->map->mc[0] - 1][mstr->map->mc[1]] = '0';
@@ -44,7 +44,7 @@ int	move_up(t_master *mstr)
 int	move_down(t_master *mstr)
 {
 	if (mstr->map->map[mstr->map->mc[0] + 1][mstr->map->mc[1]] == '1')
-		;
+		return (0);
 	else if (mstr->map->map[mstr->map->mc[0] + 1][mstr->map->mc[1]] == 'C')
 	{
 		mstr->map->map[mstr->map->mc[0] + 1][mstr->map->mc[1]] = '0';
@@ -72,8 +72,8 @@ int	move_down(t_master *mstr)
 int	move_left(t_master *mstr)
 {
 	if (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] - 1] == '1')
-		;
-	elseif (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] - 1] == 'C')
+		return (0);
+	else if (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] - 1] == 'C')
 	{
 		mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] - 1] = '0';
 		mstr->map->mc[1]--;
@@ -100,7 +100,7 @@ int	move_left(t_master *mstr)
 int	move_right(t_master *mstr)
 {
 	if (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] + 1] == '1')
-		;
+		return (0);
 	else if (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] + 1] == 'C')
 	{
 		mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] + 1] = '0';

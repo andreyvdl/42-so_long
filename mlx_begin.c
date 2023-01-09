@@ -6,11 +6,10 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 14:42:53 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:41:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "so_long.h"
 
 // Game max resolution is based on the workspaces resolution: 1280x1024

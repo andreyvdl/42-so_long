@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 13:31:44 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:46:09 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "so_long_def.h"
 # include "so_long_strct.h"
 
-// error.c functions
+// errors.c functions
 void	print_error(char *local, int n);
 
 // frees.c functions
@@ -50,12 +50,14 @@ int		load_textures(t_ptr *ptr, t_img *img);
 int		mlx_start(t_map *map, t_ptr *ptr, t_img *img);
 
 // render.c functions
+void	put_player(t_map *map, t_ptr *ptrs, t_img *img);
 void	put_images(t_map *map, t_ptr *ptrs, t_img *img, size_t y);
 
 // gameplay.c functions
-void	gameplay(t_map *map, t_ptr *ptrs, t_img *img);
-int		key_pressed(int keycode, t_master *mstr);
 int		mlx_exit(t_master *mstr);
+int		render_update(t_master *mstr);
+int		key_pressed(int keycode, t_master *mstr);
+void	gameplay(t_map *map, t_ptr *ptrs, t_img *img);
 
 // gameplay_utils.c functions
 int		move_up(t_master *mstr);
