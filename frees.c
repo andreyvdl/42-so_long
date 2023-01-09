@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:10:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/07 15:29:58 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:50:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,4 @@ void	free_ptrs(t_ptr *ptrs)
 {
 	if (ptrs->mlx)
 		free(ptrs->mlx);
-	if (ptrs->win)
-		free(ptrs->win);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/07 15:40:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:31:44 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <mlx.h>
 # include "so_long_def.h"
 # include "so_long_strct.h"
-
 
 // error.c functions
 void	print_error(char *local, int n);
@@ -46,8 +45,22 @@ int		backtracking(t_map *map);
 void	flowage(char **map, size_t y, size_t x);
 int		locate_references(t_map *map, size_t y, size_t x);
 
-//mlx_begin.c functions
+// mlx_begin.c functions
 int		load_textures(t_ptr *ptr, t_img *img);
 int		mlx_start(t_map *map, t_ptr *ptr, t_img *img);
+
+// render.c functions
+void	put_images(t_map *map, t_ptr *ptrs, t_img *img, size_t y);
+
+// gameplay.c functions
+void	gameplay(t_map *map, t_ptr *ptrs, t_img *img);
+int		key_pressed(int keycode, t_master *mstr);
+int		mlx_exit(t_master *mstr);
+
+// gameplay_utils.c functions
+int		move_up(t_master *mstr);
+int		move_down(t_master *mstr);
+int		move_left(t_master *mstr);
+int		move_right(t_master *mstr);
 
 #endif

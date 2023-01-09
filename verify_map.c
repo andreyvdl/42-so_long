@@ -6,13 +6,14 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:11:57 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/07 12:47:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:24:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "includes/libft.h"
 #include "includes/gnl.h"
+#include "includes/ft_printf.h"
 
 int	validate_map(t_map *map)
 {
@@ -115,6 +116,7 @@ int	map_is_valid(t_map *map)
 	size_t	y;
 	size_t	x;
 
+	map->coin_count = 0;
 	y = -1;
 	while (++y < map->y_mx)
 	{

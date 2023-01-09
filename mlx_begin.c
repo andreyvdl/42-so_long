@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/07 15:29:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:42:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ int	mlx_start(t_map *map, t_ptr *ptr, t_img *img)
 	if (!ptr->mlx)
 		return (free_map(map), 1);
 	if (load_textures(ptr, img))
-		return (free_textures(ptr, img), free_ptrs(ptr), 1);
+		return (free_textures(ptr, img), mlx_destroy_display(ptr->mlx),
+			free_map(map), 1);
 	img->size = 32;
-	ptr->win = mlx_new_window(ptr->mlx, map->x_mx * img->size,
-			map->y_mx * img->size, "EPIC GAME by adantas-");
+	ptr->win = mlx_new_window(ptr->mlx, map->x_mx * 32, map->y_mx * 32,
+			"EPIC GAME by adantas-");
 	if (!ptr->win)
-		return (free_textures(ptr, img), free_map(map), 1);
+		return (free_textures(ptr, img), mlx_destroy_display(ptr->mlx),
+			free_map(map), 1);
 	return (0);
 }
 
