@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:11:57 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 13:07:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:34:25 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	get_map_size(t_map *map)
 
 void	file2matrix(t_map *map)
 {
-	char	*line;
+	char	line[1];
 	size_t	y;
 	size_t	x;
 
@@ -83,16 +83,15 @@ void	file2matrix(t_map *map)
 	y = -1;
 	while (++y < map->y_mx)
 	{
-		line = get_next_line(map->fd);
 		x = 0;
 		map->map[y] = (char *)ft_calloc(sizeof(char), map->x_mx + 1);
-		while (line[x] != '\n' && line[x])
+		while (x < map->x_mx)
 		{
-			map->map[y][x] = line[x];
+			read(map->fd, line, 1);
+			map->map[y][x] = line[0];
 			x++;
 		}
-		free(line);
-		line = 0x0;
+		read(map->fd, line, 1);
 	}
 }
 
