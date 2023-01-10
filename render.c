@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:09:12 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 15:46:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/10 10:07:11 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void	put_images(t_map *map, t_ptr *ptrs, t_img *img, size_t y)
 void	put_player(t_map *map, t_ptr *ptrs, t_img *img)
 {
 	mlx_put_image_to_window(ptrs->mlx, ptrs->win, img->mc_r,
-		map->mc[0] * 32, map->mc[1] * 32);
+		map->mc[1] * 32, map->mc[0] * 32);
 }

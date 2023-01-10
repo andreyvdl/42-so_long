@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:59:13 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 15:27:38 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:38:17 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	gameplay(t_map *map, t_ptr *ptrs, t_img *img)
 	mstr.map = map;
 	mstr.ptr = ptrs;
 	mstr.img = img;
+	mstr.map->map[mstr.map->mc[0]][mstr.map->mc[1]] = '0';
 	mlx_key_hook(ptrs->win, key_pressed, &mstr);
-	mlx_loop_hook(ptrs->mlx, render_update, &mstr);
 	mlx_loop(ptrs->mlx);
 }
 
@@ -47,15 +47,13 @@ int	mlx_exit(t_master *mstr)
 	free_map(mstr->map);
 	free_textures(mstr->ptr, mstr->img);
 	mlx_destroy_display(mstr->ptr->mlx);
+	free(mstr->ptr->mlx);
 	exit(0);
 }
 
 int	render_update(t_master *mstr)
 {
-	if (mstr->mc_mv == 1)
-	{
-		mlx_clear_window(mstr->ptr->mlx, mstr->ptr->win);
-		put_images(mstr->map, mstr->ptr, mstr->img, -1);
-	}
+	mlx_clear_window(mstr->ptr->mlx, mstr->ptr->win);
+	put_images(mstr->map, mstr->ptr, mstr->img, -1);
 	return (0);
 }
