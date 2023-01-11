@@ -6,14 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:07 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 12:44:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:43:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//compile with the flags -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
-
 #include "so_long.h"
-#include "includes/ft_printf.h"
+#include "libft/ft_printf.h"
 
 int	main(int ac, char **av)
 {

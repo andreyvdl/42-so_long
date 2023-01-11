@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   verify_file_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 14:56:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 15:57:24 by adantas-         ###   ########.fr       */
+/*   Created: 2022/12/08 14:52:01 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/11 16:56:07 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include "libft/ft_printf.h"
+#include "so_long_bonus.h"
+#include "libft/libft.h"
 
-void	print_error(char *local, int n)
+void	validate_file(char *file, t_map *map)
 {
-	if (n == 22 || n == 53)
+	int	fd;
+	int	i;
+
+	i = ft_strlen(file);
+	if (i < 5 || ft_strncmp(&file[i - 4], ".ber", 4))
+		print_error("filename", 53);
+	fd = open(file, O_RDONLY);
+	if (fd < 0 || read(fd, 0, 0))
 	{
-		ft_printf("%s: %s\n", local, strerror(n));
-		ft_printf("Usage: ./so_long <filename>.ber\n");
-		exit(n);
+		close(fd);
+		print_error("openning", 2);
 	}
-	else if (n == 59)
-	{
-		ft_printf("Error\n");
-		ft_printf("Map isn't valid.❌\nRTFM or call the dev/tech person!📑\n");
-		exit(59);
-	}
-	ft_printf("%s: %s\n", local, strerror(n));
-	exit(n);
+	map->name = file;
+	map->fd = fd;
 }

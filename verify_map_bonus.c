@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verify_map.c                                       :+:      :+:    :+:   */
+/*   verify_map_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:11:57 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 15:59:59 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:40:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 #include "libft/libft.h"
 #include "libft/ft_printf.h"
 #include "libft/gnl.h"
@@ -26,20 +26,11 @@ int	validate_map(t_map *map)
 	map->fd = open(map->name, O_RDONLY);
 	file2matrix(map);
 	if (map_is_closed(map))
-	{
-		free_map(map);
-		return (1);
-	}
+		return (free_map(map), 1);
 	if (map_is_valid(map))
-	{
-		free_map(map);
-		return (1);
-	}
+		return (free_map(map), 1);
 	if (backtracking(map))
-	{
-		free_map(map);
-		return (1);
-	}
+		return (free_map(map), 1);
 	close(map->fd);
 	return (0);
 }
@@ -60,14 +51,14 @@ int	get_map_size(t_map *map)
 			map->x_mx = ft_strlen(line) - 1;
 		else if ((map->x_mx != ft_strlen(line) - 1
 				&& line[ft_strlen(line)] == '\n') || (map->x_mx <= 2
-				|| map->x_mx > 40))
+				|| map->x_mx > 160))
 		{
 			free(line);
 			return (1);
 		}
 		free(line);
 	}
-	if (y <= 2 || y > 24 || (map->x_mx <= 3 && y <= 3))
+	if (y <= 2 || y > 128 || (map->x_mx <= 3 && y <= 3))
 		return (1);
 	map->y_mx = y;
 	return (0);
@@ -123,7 +114,7 @@ int	map_is_valid(t_map *map)
 		x = -1;
 		while (++x < map->x_mx)
 		{
-			if (!ft_strchr("01CEP", map->map[y][x]))
+			if (!ft_strchr("01CEPX", map->map[y][x]))
 				return (1);
 			else if (map->map[y][x] == 'C')
 				map->coin_count++;

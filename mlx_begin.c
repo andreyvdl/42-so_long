@@ -6,12 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 12:52:30 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:41:49 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-// Game max resolution is 1280x1024 or x=40 & y=24
 
 int	mlx_start(t_map *map, t_ptr *ptr, t_img *img)
 {
@@ -23,7 +22,7 @@ int	mlx_start(t_map *map, t_ptr *ptr, t_img *img)
 			free_map(map), 1);
 	img->size = 32;
 	ptr->win = mlx_new_window(ptr->mlx, map->x_mx * 32, map->y_mx * 32,
-			"EPIC GAME by adantas-");
+			"If you can read me, your map is big :)");
 	if (!ptr->win)
 		return (free_textures(ptr, img), mlx_destroy_display(ptr->mlx),
 			free_map(map), 1);

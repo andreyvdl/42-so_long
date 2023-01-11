@@ -6,12 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 11:18:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:57:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "includes/ft_printf.h"
+#include "libft/ft_printf.h"
 
 int	move_up(t_master *mstr)
 {

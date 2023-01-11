@@ -13,8 +13,6 @@ F_SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	ft_substr.c ft_tolower.c ft_toupper.c gnl_utils.c gnl.c \
 	hex_handler.c nbr_handler.c
 F_OBJS = $(F_SRCS:%.c=%.o)
-# ======= PATHS =======
-P_INCL = ../includes
 # ======= COLORS ========
 BLACK =		\033[1;30m
 RED =		\033[1;31m
@@ -35,7 +33,7 @@ $(NAME):	$(F_OBJS)
 	@echo "$(GREEN)$(NAME) created$(RESET)"
 
 $(F_OBJS):
-	@cc $(CFLAGS) -I $(P_INCL) -c $(@:%.o=%.c)
+	@cc $(CFLAGS) -I . -c $(@:%.o=%.c)
 
 clean:
 	@rm -rf $(F_OBJS)

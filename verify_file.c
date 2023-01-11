@@ -6,12 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:52:01 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 15:19:08 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:58:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "includes/libft.h"
+#include "libft/libft.h"
 
 void	validate_file(char *file, t_map *map)
 {

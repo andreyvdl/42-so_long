@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_strct.h                                    :+:      :+:    :+:   */
+/*   so_long_strct_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:33:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 17:34:14 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:34:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_STRCT_H
-# define SO_LONG_STRCT_H
+#ifndef SO_LONG_STRCT_BONUS_H
+# define SO_LONG_STRCT_BONUS_H
 
 # include <stdlib.h>
 
@@ -40,6 +40,10 @@ typedef struct s_img {
 	void	*exit0;
 	void	*coin;
 	void	*mc_r;
+	void	*mc_l;
+	void	*mc_u;
+	void	*mc_d;
+	void	*enemy;
 }	t_img;
 
 typedef struct s_master {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verify_map_utils.c                                 :+:      :+:    :+:   */
+/*   verify_map_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:22:20 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 17:34:37 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:39:54 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 #include "libft/libft.h"
 
 int	locate_references(t_map *map, size_t y, size_t x)

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 16:07:53 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:40:14 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <string.h> //strerror
 # include <stdlib.h> //exit
 # include <unistd.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include "so_long_def.h"
-# include "so_long_strct.h"
+# include "so_long_def_bonus.h"
+# include "so_long_strct_bonus.h"
 
 // errors.c functions
 void	print_error(char *local, int n);

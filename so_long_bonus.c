@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 14:56:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 15:57:24 by adantas-         ###   ########.fr       */
+/*   Created: 2022/12/01 15:15:07 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/11 16:43:59 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 #include "libft/ft_printf.h"
 
-void	print_error(char *local, int n)
+int	main(int ac, char **av)
 {
-	if (n == 22 || n == 53)
+	t_map	map;
+	t_ptr	ptrs;
+	t_img	img;
+
+	if (ac != 2)
+		print_error("argument", 22);
+	validate_file(av[1], &map);
+	if (validate_map(&map))
 	{
-		ft_printf("%s: %s\n", local, strerror(n));
-		ft_printf("Usage: ./so_long <filename>.ber\n");
-		exit(n);
+		close(map.fd);
+		print_error("map", 59);
 	}
-	else if (n == 59)
-	{
-		ft_printf("Error\n");
-		ft_printf("Map isn't valid.❌\nRTFM or call the dev/tech person!📑\n");
-		exit(59);
-	}
-	ft_printf("%s: %s\n", local, strerror(n));
-	exit(n);
+	if (mlx_start(&map, &ptrs, &img))
+		print_error("mlx", 28);
+	put_images(&map, &ptrs, &img, -1);
+	gameplay(&map, &ptrs, &img);
 }
