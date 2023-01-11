@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitestx.c                                        :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:07 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 12:48:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:44:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int ac, char **av)
 		close(map.fd);
 		print_error("map", 59);
 	}
-	ft_printf("acabou\n");
 	if (mlx_start(&map, &ptrs, &img))
 		print_error("mlx", 28);
 	put_images(&map, &ptrs, &img, -1);

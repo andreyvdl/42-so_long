@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:59:13 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 12:38:17 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:31:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	gameplay(t_map *map, t_ptr *ptrs, t_img *img)
 	mstr.img = img;
 	mstr.map->map[mstr.map->mc[0]][mstr.map->mc[1]] = '0';
 	mlx_key_hook(ptrs->win, key_pressed, &mstr);
+	mlx_hook(ptrs->win, 17, 0, mlx_exit, &mstr);
 	mlx_loop(ptrs->mlx);
 }
 

@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/09 15:41:01 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:52:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+// Game max resolution is 1280x1024 or x=40 & y=24
 
-// Game max resolution is based on the workspaces resolution: 1280x1024
 int	mlx_start(t_map *map, t_ptr *ptr, t_img *img)
 {
 	ptr->mlx = mlx_init();

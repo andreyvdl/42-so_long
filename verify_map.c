@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:11:57 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 17:34:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:51:22 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	get_map_size(t_map *map)
 		}
 		free(line);
 	}
-	if (y <= 2 || (map->x_mx <= 3 && y <= 3) || y > 24)
+	if (y <= 2 || y > 24 || (map->x_mx <= 3 && y <= 3))
 		return (1);
 	map->y_mx = y;
 	return (0);
