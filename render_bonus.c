@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:09:12 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 12:03:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 13:45:56 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	put_images(t_master *mstr, int side)
 	coins_n_exit(mstr->map, mstr->ptr, mstr->img);
 	enemies(mstr->map, mstr->ptr, mstr->img);
 	put_player(mstr->map, mstr->ptr, mstr->img, side);
-	mlx_string_put(mstr->ptr->mlx, mstr->ptr->win, 7, 10, 0x00000000, "MOVES ");
-	mlx_string_put(mstr->ptr->mlx, mstr->ptr->win, 7 * 6, 10, 0x00000000,
+	mlx_string_put(mstr->ptr->mlx, mstr->ptr->win, 7, 10, 0x003964AD, "MOVES ");
+	mlx_string_put(mstr->ptr->mlx, mstr->ptr->win, 7 * 6, 10, 0x003964AD,
 		player_moves);
 	free(player_moves);
 }
