@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:28:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 11:36:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:27:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	load_textures(t_ptr *ptr, t_img *img, t_map *map)
 {
 	if (map->x_mx < 6 && map->y_mx == 4)
 		return (load256(ptr, img));
-	else if (map->x_mx < 11 && map->x_mx < 9)
+	else if (map->x_mx < 11 && map->y_mx < 9)
 		return (load128(ptr, img));
 	else if (map->x_mx < 21 && map->y_mx < 17)
 		return (load64(ptr, img));

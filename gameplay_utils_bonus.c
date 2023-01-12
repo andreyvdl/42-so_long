@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 13:59:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:35:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	move_up(t_master *mstr)
 	else if (mstr->map->map[mstr->map->mc[0] - 1][mstr->map->mc[1]] == 'E')
 	{
 		if (mstr->map->coin_count == 0)
-			return (ft_printf("\e[1;36mCongratulations🥳\nTotal moves: %d\n",
+			return (ft_printf("\e[1;36mConglaturation🥳\nTotal moves: %d\n",
 					mstr->mc_mv + 1), mlx_exit(mstr), 0);
 		mstr->map->mc[0]--;
 	}
@@ -55,7 +55,7 @@ int	move_down(t_master *mstr)
 	else if (mstr->map->map[mstr->map->mc[0] + 1][mstr->map->mc[1]] == 'E')
 	{
 		if (mstr->map->coin_count == 0)
-			return (ft_printf("\e[1;36mCongratulations🥳\nTotal moves: %d\n",
+			return (ft_printf("\e[1;36mConglaturation🥳\nTotal moves: %d\n",
 					mstr->mc_mv + 1), mlx_exit(mstr), 0);
 		mstr->map->mc[0]++;
 	}
@@ -80,7 +80,7 @@ int	move_left(t_master *mstr)
 	else if (mstr->map->map[mstr->map->mc[0]][mstr->map->mc[1] - 1] == 'E')
 	{
 		if (mstr->map->coin_count == 0)
-			return (ft_printf("\e[1;36mCongratulations🥳\nTotal moves: %d\n",
+			return (ft_printf("\e[1;36mConglaturation🥳\nTotal moves: %d\n",
 					mstr->mc_mv + 1), mlx_exit(mstr), 0);
 		mstr->map->mc[1]--;
 	}
