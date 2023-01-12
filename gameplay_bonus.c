@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:59:13 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 11:47:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:00:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	mlx_exit(t_master *mstr)
 
 int	render_update(t_master *mstr, int side)
 {
-	mlx_clear_window(mstr->ptr->mlx, mstr->ptr->win);
 	put_images(mstr, side);
 	return (0);
 }
