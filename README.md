@@ -10,6 +10,14 @@ so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | 
 
 ## Execution
 ```sh
+make
+./so_long <filename>.ber
+```
+
+or
+
+```
+make bonus
 ./so_long <filename>.ber
 ```
 

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:07 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 12:18:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 13:27:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ int	main(int ac, char **av)
 
 void	credits(void)
 {
-	ft_printf("\t\tGraphics\n");
-	ft_printf("Kirby Mass Attack\tJermungandr\nhttps://is.gd/6n99aG ");
-	ft_printf("https://is.gd/5slJ67 https://is.gd/SShpdL\n\n");
-	ft_printf("Kirby Dream Land 3\tAwsomeguy5\nhttps://is.gd/m7qRJe\n\n");
-	ft_printf("\t\tCode\n");
-	ft_printf("Andrey(adantas-)\tGithub Copilot\n\n");
-	ft_printf("Thank you very much for playing my game");
+	ft_printf("\t\t\e[1;34mGraphics\e[0m\n");
+	ft_printf("\e[1;33mKirby Mass Attack\tJermungandr\e[0m\n");
+	ft_printf("https://is.gd/6n99aG https://is.gd/5slJ67 ");
+	ft_printf("https://is.gd/SShpdL\n\n");
+	ft_printf("\e[1;33mKirby Dream Land 3\tAwsomeguy5\e[0m\n");
+	ft_printf("https://is.gd/m7qRJe\n\n");
+	ft_printf("\t\t\e[1;34mCode\e[0m\n");
+	ft_printf("\e[1;33mAndrey(adantas-)\tGithub Copilot\e[0m\n\n");
+	ft_printf("\e[1;37mThank you very much for playing my game\e[0m\n");
 }
