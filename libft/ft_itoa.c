@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:04:31 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:27:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 10:58:37 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	decimal(int nbr);
 static int	ft_abs(int n);

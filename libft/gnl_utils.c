@@ -6,12 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:51:38 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/10 12:38:23 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:04:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/gnl.h"
-#include "../includes/libft.h"
+#include "gnl.h"
+#include "libft.h"
 
 void	*ft_realloc_mod(char **ptr)
 {

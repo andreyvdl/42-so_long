@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 11:18:47 by adantas-          #+#    #+#              #
-#    Updated: 2023/01/11 16:51:35 by adantas-         ###   ########.fr        #
+#    Updated: 2023/01/12 12:08:55 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ RESET	:=	\033[0m
 F_SRCS = errors.c frees.c gameplay.c gameplay_utils.c mlx_begin.c render.c \
 	so_long.c verify_file.c verify_map.c verify_map_utils.c
 F_OBJS = $(F_SRCS:%.c=%.o)
-BF_SRCS = so_long_bonus.c
+BF_SRCS = errors_bonus.c frees_bonus.c gameplay_bonus.c gameplay_utils_bonus.c \
+	load_textures_bonus.c mlx_begin_bonus.c render_bonus.c so_long_bonus.c \
+	verify_file_bonus.c verify_map_bonus.c verify_map_utils_bonus.c 
 BF_OBJS = $(BF_SRCS:%.c=%.o)
 
 # CODE =========================================================================
@@ -50,9 +52,7 @@ $(F_OBJS):
 	cc $(CFLAGS) -I . -c $(@:.o=.c)
 
 bonus:
-	@echo "$(GREEN)Creating $(B_NAME)...$(RESET)"
-	@make F_OBJ="$(BF_OBJS)" --no-print-directory
-	@echo "$(GREEN)$(B_NAME) created$(RESET)"
+	@make F_OBJS="$(BF_OBJS)" --no-print-directory
 
 clean:
 	@echo "$(WHITE)Removing objects...$(RESET)"
@@ -67,6 +67,9 @@ fclean: clean
 	@echo "$(PURPLE)$(NAME) and libft.a removed.$(RESET)"
 
 re: fclean all
+	@echo "$(RED)Update completed.$(RESET)"
+
+re_bonus: fclean bonus
 	@echo "$(RED)Update completed.$(RESET)"
 
 norm:

@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:15:49 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:25:46 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:02:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	ft_abs(int n);
 

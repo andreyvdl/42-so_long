@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/11 17:40:14 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:51:06 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,46 +21,59 @@
 # include "so_long_def_bonus.h"
 # include "so_long_strct_bonus.h"
 
-// errors.c functions
+// errors_bonus.c function
 void	print_error(char *local, int n);
 
-// frees.c functions
+// frees_bonus.c functions
 void	free_map(t_map *map);
-void	free_ptrs(t_ptr *ptrs);
 void	free_copy(t_map *map, char **map_copy);
 void	free_textures(t_ptr *ptrs, t_img *img);
 
-// gameplay.c functions
+// gameplay_bonus.c functions
+void	gameplay(t_master *mstr);
 int		mlx_exit(t_master *mstr);
-int		render_update(t_master *mstr);
+int		render_update(t_master *mstr, int side);
 int		key_pressed(int keycode, t_master *mstr);
-void	gameplay(t_map *map, t_ptr *ptrs, t_img *img);
 
-// gameplay_utils.c functions
+// gameplay_utils_bonus.c functions
 int		move_up(t_master *mstr);
 int		move_down(t_master *mstr);
 int		move_left(t_master *mstr);
 int		move_right(t_master *mstr);
 
-// mlx_begin.c functions
-int		load_textures(t_ptr *ptr, t_img *img);
+// load_textures_bonus.c functions
+int		load64(t_ptr *ptr, t_img *img);
+int		load32(t_ptr *ptr, t_img *img);
+int		load16(t_ptr *ptr, t_img *img);
+int		load128(t_ptr *ptr, t_img *img);
+int		load256(t_ptr *ptr, t_img *img);
+
+// mlx_begin_bonus.c functions
+int		load8(t_ptr *ptr, t_img *img);
 int		mlx_start(t_map *map, t_ptr *ptr, t_img *img);
+int		load_textures(t_ptr *ptr, t_img *img, t_map *map);
 
-// render.c functions
-void	put_player(t_map *map, t_ptr *ptrs, t_img *img);
-void	put_images(t_map *map, t_ptr *ptrs, t_img *img, size_t y);
+// render_bonus.c functions
+void	put_images(t_master *mstr, int side);
+void	enemies(t_map *map, t_ptr *ptrs, t_img *img);
+void	coins_n_exit(t_map *map, t_ptr *ptrs, t_img *img);
+void	walls_n_floors(t_map *map, t_ptr *ptrs, t_img *img);
+void	put_player(t_map *map, t_ptr *ptrs, t_img *img, int side);
 
-// verify_file.c functions
+// so_long_bonus.c functions
+void	credits(void);
+
+// verify_file_bonus.c functions
 void	validate_file(char *file, t_map *map);
 
-// verify_map.c functions
+// verify_map_bonus.c functions
 void	file2matrix(t_map *map);
 int		validate_map(t_map *map);
 int		get_map_size(t_map *map);
 int		map_is_valid(t_map *map);
 int		map_is_closed(t_map *map);
 
-// verify_map_utils.c functions
+// verify_map_utils_bonus.c functions
 int		backtracking(t_map *map);
 void	flowage(char **map, size_t y, size_t x);
 int		locate_references(t_map *map, size_t y, size_t x);
