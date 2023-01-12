@@ -16,7 +16,7 @@ make
 
 or
 
-```
+```sh
 make bonus
 ./so_long <filename>.ber
 ```
