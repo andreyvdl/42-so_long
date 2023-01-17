@@ -49,7 +49,7 @@ $(NAME): $(F_OBJS)
 	@echo "$(GREEN)$(NAME) created$(RESET)"
 
 $(F_OBJS):
-	cc $(CFLAGS) -I . -c $(@:.o=.c)
+	@cc $(CFLAGS) -I . -c $(@:.o=.c)
 
 bonus:
 	@make F_OBJS="$(BF_OBJS)" --no-print-directory
