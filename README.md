@@ -21,6 +21,4 @@ make bonus
 ./so_long <filename>.ber
 ```
 
-### [CODAM MLX](https://github.com/codam-coding-college/MLX42)
-
-### [42Paris](https://github.com/42Paris/minilibx-linux)
+### [42MLX](https://github.com/42Paris/minilibx-linux)
