@@ -2,7 +2,7 @@
 
 Program name | Files to turn in | Makefile rules | External functions | Result
 :---: | :---: | :---: | :---: |:---:
-so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | open, close, read, write, malloc, free, perror, streeror, exit, all math.h functions, all mlx functions, ft_printf or any equivalent made, (libft) | 0/100%
+so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | open, close, read, write, malloc, free, perror, streeror, exit, all math.h functions, all mlx functions, ft_printf or any equivalent made, (libft) | 123/100%
 
 ## Objective
 
