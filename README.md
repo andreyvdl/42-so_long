@@ -12,17 +12,18 @@ so_long | Makefile, \*.h, \*.c, maps, textures | NAME, all, clean, fclean, re | 
 
 >You must create a basic 2D game in which a dolphin escapes Earth after eating some fish. Instead of a dolphin, fish, and the Earth, you can use any character, any collectible and any place you want.
 
-## Execution
+## Execution<sup>*</sup>
 ```sh
 make
-./so_long <filename>.ber
+./so_long map.ber
 ```
 
 or
 
 ```sh
 make bonus
-./so_long <filename>.ber
+./so_long map.ber
 ```
+<sub>* files with enemies only work on bonus</sub>
 
 ### [42MLX](https://github.com/42Paris/minilibx-linux)
