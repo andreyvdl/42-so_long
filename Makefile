@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 11:18:47 by adantas-          #+#    #+#              #
-#    Updated: 2023/01/12 12:08:55 by adantas-         ###   ########.fr        #
+#    Updated: 2023/10/29 00:28:01 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = so_long
 CFLAGS = -Wall -Wextra -Werror
-COMPFLAGS = -L libft -lft -lmlx -lXext -lX11 -lm -lz
+COMPFLAGS = -Llibft -lft -Lmlx -lmlx -lXext -lX11 -lm -lz
 LIBPATH = libft/
 
 # COLORS =======================================================================
@@ -42,14 +42,19 @@ BF_OBJS = $(BF_SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(F_OBJS)
+$(NAME): mlx/libmlx.a $(LIBPATH)libft.a $(F_OBJS)
 	@echo "$(GREEN)Creating $(NAME)...$(RESET)"
-	@make -C $(LIBPATH)
-	@cc $(CFLAGS) -I . $(F_OBJS) $(LIBPATH)/libft.a $(COMPFLAGS) -o $(NAME)
+	@cc $(CFLAGS) -I . $(F_OBJS) -o $(NAME) $(COMPFLAGS)
 	@echo "$(GREEN)$(NAME) created$(RESET)"
 
 $(F_OBJS):
 	@cc $(CFLAGS) -I . -c $(@:.o=.c)
+
+mlx/libmlx.a:
+	@make --no-print-directory -C mlx
+
+$(LIBPATH)libft.a:
+	@make --no-print-directory -C $(LIBPATH)
 
 bonus:
 	@make F_OBJS="$(BF_OBJS)" --no-print-directory
@@ -57,13 +62,15 @@ bonus:
 clean:
 	@echo "$(WHITE)Removing objects...$(RESET)"
 	@rm -rf *.o
-	@make clean -C $(LIBPATH)
+	@make clean -C $(LIBPATH) --no-print-directory
+	@make clean -C mlx --no-print-directory
 	@echo "$(WHITE)Objects removed.$(RESET)"
 	
 fclean: clean
 	@echo "$(PURPLE)Removing $(NAME) and libft.a...$(RESET)"
 	@rm -rf $(NAME)
-	@make fclean -C $(LIBPATH)
+	@rm -fr $(LIBPATH)libft.a
+	@rm -fr mlx/libmlx.a
 	@echo "$(PURPLE)$(NAME) and libft.a removed.$(RESET)"
 
 re: fclean all
@@ -74,7 +81,7 @@ re_bonus: fclean bonus
 
 norm:
 	@echo "$(YELLOW)Running norminette...$(RESET)"
-	@norminette
+	@norminette $(F_SRCS) $(BF_SRCS) $(wildcard so_long.h so_long_bonus.h)
 	@echo "$(YELLOW)All OK!$(RESET)"
 
 .PHONY: re, clean, fclean, all, norm

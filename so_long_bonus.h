@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:16:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/12 11:51:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/29 00:22:47 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h> //exit
 # include <unistd.h>
 # include <fcntl.h>
-# include <mlx.h>
+# include "mlx/mlx.h"
 # include "so_long_def_bonus.h"
 # include "so_long_strct_bonus.h"
 
