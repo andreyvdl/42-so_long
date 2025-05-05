@@ -13,7 +13,7 @@
 # VAR ==========================================================================
 
 NAME = so_long
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=gnu11
 COMPFLAGS = -Llibft -lft -Lmlx -lmlx -lXext -lX11 -lm -lz
 LIBPATH = libft/
 
@@ -35,7 +35,7 @@ F_SRCS = errors.c frees.c gameplay.c gameplay_utils.c mlx_begin.c render.c \
 F_OBJS = $(F_SRCS:%.c=%.o)
 BF_SRCS = errors_bonus.c frees_bonus.c gameplay_bonus.c gameplay_utils_bonus.c \
 	load_textures_bonus.c mlx_begin_bonus.c render_bonus.c so_long_bonus.c \
-	verify_file_bonus.c verify_map_bonus.c verify_map_utils_bonus.c 
+	verify_file_bonus.c verify_map_bonus.c verify_map_utils_bonus.c
 BF_OBJS = $(BF_SRCS:%.c=%.o)
 
 # CODE =========================================================================
@@ -65,7 +65,7 @@ clean:
 	@make clean -C $(LIBPATH) --no-print-directory
 	@make clean -C mlx --no-print-directory
 	@echo "$(WHITE)Objects removed.$(RESET)"
-	
+
 fclean: clean
 	@echo "$(PURPLE)Removing $(NAME) and libft.a...$(RESET)"
 	@rm -rf $(NAME)
