@@ -27,3 +27,7 @@ make bonus
 <sub>* files with enemies only work on bonus</sub>
 
 ### [42MLX](https://github.com/42Paris/minilibx-linux)
+
+## Demo
+
+https://youtu.be/GgER__3Navc?si=Rby4PMmXVeUl_rIE
